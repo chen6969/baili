@@ -23,3 +23,21 @@ rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 sed -i '/myddns_ipv4/,$d' feeds/packages/net/ddns-scripts/files/etc/config/ddns
 ##-----------------Manually set CPU frequency for MT7986A-----------------
 sed -i '/"mediatek"\/\*|\"mvebu"\/\*/{n; s/.*/\tcpu_freq="2.0GHz" ;;/}' package/emortal/autocore/files/generic/cpuinfo
+
+#  steven ->
+# https://github.com/stupidloud/nanopi-openwrt/blob/master/scripts/merge_packages.sh
+function merge_package(){
+    repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
+    pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
+    find package/ -follow -name $pkg -not -path "package/custom/*" | xargs -rt rm -rf
+    git clone --depth=1 --single-branch $1
+    mv $2 package/custom/
+    rm -rf $repo
+}
+rm -rf package/luci-app-openclash
+rm -rf feeds/luci/applications/luci-app-openclash
+merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
+
+#rm -rf package/luci-app-timecontrol
+#merge_package https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/luci-app-timecontrol
+
