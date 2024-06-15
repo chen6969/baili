@@ -38,6 +38,11 @@ rm -rf package/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 
-#rm -rf package/luci-app-timecontrol
-#merge_package https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/luci-app-timecontrol
+rm -rf package/luci-app-timecontrol
+merge_package https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/luci-app-timecontrol
+
+rm -rf package/luci-app-alist
+rm -rf feeds/luci/applications/luci-app-alist
+git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/luci-app-alist
+
 
