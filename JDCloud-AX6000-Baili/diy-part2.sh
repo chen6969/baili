@@ -43,10 +43,6 @@ merge_package https://github.com/Lienol/openwrt-package.git openwrt-package/luci
 rm -rf package/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
-# steven <-
-
-# Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
 # 预置openclash内核
 mkdir -p files/etc/openclash/core
@@ -59,6 +55,10 @@ wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 # 给内核权限
 chmod +x files/etc/openclash/core/clash*
 
+# steven <-
+
+# Modify default IP
+#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 ##-----------------Add OpenClash dev core------------------
 #curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz -o /tmp/clash.tar.gz
 #tar zxvf /tmp/clash.tar.gz -C /tmp >/dev/null 2>&1
