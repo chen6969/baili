@@ -34,16 +34,27 @@ function merge_package(){
     mv $2 package/custom/
     rm -rf $repo
 }
+
+rm -rf package/custom; mkdir package/custom
+
 rm -rf package/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 
 rm -rf package/luci-app-timecontrol
 rm -rf feeds/luci/applications/luci-app-timecontrol
-merge_package https://github.com/Lienol/openwrt-package/trunk/luci-app-timecontrol package/luci-app-timecontrol
+merge_package https://github.com/Lienol/openwrt-package.git openwrt-package/luci-app-timecontrol
+
+
+https://github.com/immortalwrt/packages
+
 
 rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/luci-app-alist
+
+rm -rf package/luci-app-wechatpush
+rm -rf feeds/luci/applications/luci-app-wechatpush
+git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
 
 
