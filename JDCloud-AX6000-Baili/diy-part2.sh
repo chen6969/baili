@@ -45,16 +45,16 @@ rm -rf package/luci-app-timecontrol
 rm -rf feeds/luci/applications/luci-app-timecontrol
 merge_package https://github.com/Lienol/openwrt-package.git openwrt-package/luci-app-timecontrol
 
-
-https://github.com/immortalwrt/packages
-
+rm -rf packages/net/zerotier
+rm -rf feeds/packages/net/zerotier
+merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 
 rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
-git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/luci-app-alist
+git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
 rm -rf package/luci-app-wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
-git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/luci-app-wechatpush
+git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
 
 
