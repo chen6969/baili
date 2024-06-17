@@ -12,6 +12,8 @@
 
 #  steven ->
 # https://github.com/stupidloud/nanopi-openwrt/blob/master/scripts/merge_packages.sh
+# eg merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
+#   merge_package 仓库路径.git  参考名/目录1/目录2/ ...
 function merge_package(){
     repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
     pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
@@ -31,6 +33,14 @@ merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
+
+rm -rf packages/net/smartdns
+rm -rf feeds/packages/net/smartdns
+merge_package https://github.com/immortalwrt/packages.git packages/net/smartdns
+
+rm -rf package/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
+git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
 
 rm -rf package/luci-app-wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
