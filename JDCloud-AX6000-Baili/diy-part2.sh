@@ -34,13 +34,13 @@ rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
-#rm -rf packages/net/smartdns
-#rm -rf feeds/packages/net/smartdns
-#merge_package https://github.com/immortalwrt/packages.git packages/net/smartdns
+rm -rf packages/net/smartdns
+rm -rf feeds/packages/net/smartdns
+merge_package https://github.com/immortalwrt/packages.git packages/net/smartdns
 
-#rm -rf package/luci-app-smartdns
-#rm -rf feeds/luci/applications/luci-app-smartdns
-#git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
+rm -rf package/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
+git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/
 
 rm -rf package/luci-app-wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
