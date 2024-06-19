@@ -65,6 +65,10 @@ wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
 # 给内核权限
 chmod +x files/etc/openclash/core/clash*
 
+
+rm -rf feeds/packages/net/mwan3
+rm -rf feeds/luci/applications/luci-app-mwan3
+rm -rf feeds/luci/applications/luci-app-mwan3helper
 # steven <-
 
 # Modify default IP
