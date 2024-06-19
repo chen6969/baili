@@ -36,7 +36,7 @@ git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/lu
 
 rm -rf packages/net/smartdns
 rm -rf feeds/packages/net/smartdns
-merge_package https://github.com/immortalwrt/packages.git packages/net/smartdns
+git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git feeds/packages/net/
 
 rm -rf package/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-smartdns
