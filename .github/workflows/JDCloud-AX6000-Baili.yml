@@ -22,7 +22,7 @@ on:
       WA_FW:
         description: 'Choose mt_wifi firmware'
         required: true
-        default: 'mt7986-fw-20230808'
+        default: 'mt7986-asus-ax6000'
         type: choice
         options:
         - no-new-fw
@@ -31,10 +31,11 @@ on:
         - mt7986-fw-20230421
         - mt7986-fw-20230808
         - mt7986-fw-20231024
+        - mt7986-asus-ax6000
       WO_FW:
         description: 'Choose warp firmware'
         required: true
-        default: 'mt7986-fw-20230808'
+        default: 'mt7986-fw-20231228'
         type: choice
         options:
         - no-new-fw
@@ -42,6 +43,7 @@ on:
         - mt7986-fw-20230421
         - mt7986-fw-20230808
         - mt7986-fw-20231024
+        - mt7986-fw-20231228
       GSW:
         description: 'Use GSW switch driver (non-DSA)'
         required: true
@@ -163,6 +165,8 @@ jobs:
       run: |
         cp -r JDCloud-AX6000-Baili/firmware/mt_wifi/mt7986-fw-jdc openwrt/package/mtk/drivers/mt_wifi/files
         cp -r JDCloud-AX6000-Baili/firmware/warp/mt7986-fw-jdc openwrt/package/mtk/drivers/warp/files
+        cp -r JDCloud-AX6000-Baili/firmware/mt_wifi/mt7986-asus-ax6000 openwrt/package/mtk/drivers/mt_wifi/files
+        cp -r JDCloud-AX6000-Baili/firmware/warp/mt7986-fw-20231228 openwrt/package/mtk/drivers/warp/files
         cd openwrt
         if [ ${{ github.event.inputs.WA_FW }} == 'no-new-fw' ]; then
                 sed -i '/CONFIG_MTK_MT7986_NEW_FW=y/d' .config
