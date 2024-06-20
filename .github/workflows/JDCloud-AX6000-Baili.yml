@@ -22,7 +22,7 @@ on:
       WA_FW:
         description: 'Choose mt_wifi firmware'
         required: true
-        default: 'mt7986-asus-ax6000'
+        default: 'mt7986-fw-20230808'
         type: choice
         options:
         - no-new-fw
@@ -35,7 +35,7 @@ on:
       WO_FW:
         description: 'Choose warp firmware'
         required: true
-        default: 'mt7986-fw-20231228'
+        default: 'mt7986-fw-20230808'
         type: choice
         options:
         - no-new-fw
