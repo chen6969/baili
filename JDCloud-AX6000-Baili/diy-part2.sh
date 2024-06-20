@@ -30,6 +30,7 @@ rm -rf package/custom; mkdir package/custom
 #rm -rf feeds/packages/net/zerotier
 #merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 
+rm -rf feeds/packages/net/alist
 rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
