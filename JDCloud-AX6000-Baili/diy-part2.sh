@@ -30,28 +30,25 @@ rm -rf package/custom; mkdir package/custom
 #rm -rf feeds/packages/net/zerotier
 #merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 
+
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 rm -rf feeds/packages/net/alist
-rm -rf package/luci-app-alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
-rm -rf packages/net/smartdns
 rm -rf feeds/packages/net/smartdns
 git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git feeds/packages/net/smartdns
 
-rm -rf package/luci-app-smartdns
 rm -rf feeds/luci/applications/luci-app-smartdns
 git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
 
-rm -rf package/luci-app-wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
 
-rm -rf package/luci-app-timecontrol
 rm -rf feeds/luci/applications/luci-app-timecontrol
 merge_package https://github.com/Lienol/openwrt-package.git openwrt-package/luci-app-timecontrol
 
-rm -rf package/luci-app-openclash
 rm -rf feeds/luci/applications/luci-app-openclash
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 
