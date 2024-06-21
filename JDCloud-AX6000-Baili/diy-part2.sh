@@ -27,29 +27,32 @@ rm -rf package/custom; mkdir package/custom
 rm -rf feeds/packages/net/zerotier
 merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 
-sudo -E apt-get -qq install libfuse-dev
+# New version golang
 rm -rf feeds/packages/lang/golang
-#git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-#merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
 rm -rf packages/lang/golang
 mkdir package/lang
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 22.x packages/lang/golang
+#merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
+
+# alist
+sudo -E apt-get -qq install libfuse-dev
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
+# passwall
 rm -rf feeds/packages/net/xray-core
 rm -rf feeds/packages/net/hysteria
 rm -rf feeds/packages/net/haproxy
 rm -rf feeds/luci/applications/luci-app-passwall
-merge_package https://github.com/xiaorouji/openwrt-passwall.git openwrt-passwall/luci-app-passwall
 merge_package https://github.com/immortalwrt/packages.git packages/net/xray-core
 merge_package https://github.com/immortalwrt/packages.git packages/net/hysteria
 merge_package https://github.com/immortalwrt/packages.git packages/net/haproxy
+merge_package https://github.com/xiaorouji/openwrt-passwall.git openwrt-passwall/luci-app-passwall
 
+# smartdns
 rm -rf feeds/packages/net/smartdns
 git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git package/custom/smartdns
-
 rm -rf feeds/luci/applications/luci-app-smartdns
 git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
 
