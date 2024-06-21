@@ -13,7 +13,7 @@
 #  steven ->
 # https://github.com/stupidloud/nanopi-openwrt/blob/master/scripts/merge_packages.sh
 # eg merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
-#   merge_package 仓库路径.git  参考名/目录1/目录2/ ...
+#   merge_package 仓库路径.git  仓库名/目录1/目录2/ .../目标目录
 function merge_package(){
     repo=`echo $1 | rev | cut -d'/' -f 1 | rev`
     pkg=`echo $2 | rev | cut -d'/' -f 1 | rev`
@@ -24,24 +24,30 @@ function merge_package(){
 }
 rm -rf package/custom; mkdir package/custom
 
+rm -rf feeds/packages/net/zerotier
+merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 
-
-#rm -rf packages/net/zerotier
-#rm -rf feeds/packages/net/zerotier
-#merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
-
-
+sudo -E apt-get -qq install libfuse-dev
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
+rm -rf feeds/packages/net/xray-core
+rm -rf feeds/packages/net/hysteria
+rm -rf feeds/packages/net/haproxy
+rm -rf feeds/luci/applications/luci-app-passwall
+merge_package https://github.com/xiaorouji/openwrt-passwall.git openwrt-passwall/luci-app-passwall
+merge_package https://github.com/immortalwrt/packages.git packages/net/xray-core
+merge_package https://github.com/immortalwrt/packages.git packages/net/hysteria
+merge_package https://github.com/immortalwrt/packages.git packages/net/haproxy
+
 rm -rf feeds/packages/net/smartdns
-git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git feeds/packages/net/smartdns
+git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git package/custom/smartdns
 
 rm -rf feeds/luci/applications/luci-app-smartdns
-git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
+git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
 
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
