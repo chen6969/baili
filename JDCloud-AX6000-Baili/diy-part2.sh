@@ -22,15 +22,35 @@ function merge_package(){
     mv $2 package/custom/
     rm -rf $repo
 }
-rm -rf package/custom; mkdir package/custom
+rm -rf package/custom; 
+mkdir package/custom
+# <----
 
+
+mkdir immortalwrt_pkg
+git clone --depth 1 https://github.com/immortalwrt/packages.git immortalwrt_pkg
+
+rm -rf feeds/packages/net/xray-core
+mv immortalwrt_pkg/packages/net/xray-core feeds/packages/net/xray-core
+rm -rf feeds/packages/net/hysteria
+mv immortalwrt_pk/gpackages/net/hysteria feeds/packages/net/hysteria
+rm -rf feeds/packages/net/haproxy
+mv immortalwrt_pkg/packages/net/haproxy feeds/packages/net/haproxy
 rm -rf feeds/packages/net/zerotier
-merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
+mv immortalwrt_pkg/packages/net/zerotier feeds/packages/net/zerotier
+rm -rf feeds/packages/net/smartdns
+mv immortalwrt_pkg/packages/net/smartdns feeds/packages/net/smartdns
+rm -rf feeds/packages/lang/golang
+mv immortalwrt_pkg/packages/lang/golang feeds/packages/lang/golang
+
+rm -rf immortalwrt_pkg
+
+
 
 # New version golang
-rm -rf feeds/packages/lang/golang
-rm -rf packages/lang/golang
-git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#rm -rf packages/lang/golang
+#git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 #merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
 
 # alist
@@ -39,20 +59,14 @@ rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 
 # passwall
-rm -rf feeds/packages/net/xray-core
-rm -rf feeds/packages/net/hysteria
-rm -rf feeds/packages/net/haproxy
 rm -rf feeds/luci/applications/luci-app-passwall
-merge_package https://github.com/immortalwrt/packages.git packages/net/xray-core
-merge_package https://github.com/immortalwrt/packages.git packages/net/hysteria
-merge_package https://github.com/immortalwrt/packages.git packages/net/haproxy
 merge_package https://github.com/xiaorouji/openwrt-passwall.git openwrt-passwall/luci-app-passwall
 
 # smartdns
-rm -rf feeds/packages/net/smartdns
-git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git package/custom/smartdns
-rm -rf feeds/luci/applications/luci-app-smartdns
-git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
+#rm -rf feeds/packages/net/smartdns
+#git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git package/custom/smartdns
+#rm -rf feeds/luci/applications/luci-app-smartdns
+#git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
 
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
