@@ -65,8 +65,8 @@ merge_package https://github.com/xiaorouji/openwrt-passwall.git openwrt-passwall
 # smartdns
 #rm -rf feeds/packages/net/smartdns
 #git clone --depth 1 https://github.com/pymumu/openwrt-smartdns.git package/custom/smartdns
-#rm -rf feeds/luci/applications/luci-app-smartdns
-#git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git package/custom/luci-app-smartdns
+rm -rf feeds/luci/applications/luci-app-smartdns
+git clone --depth 1 https://github.com/pymumu/luci-app-smartdns.git feeds/luci/applications/luci-app-smartdns
 
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
