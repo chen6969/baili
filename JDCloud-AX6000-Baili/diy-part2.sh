@@ -30,7 +30,8 @@ merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 sudo -E apt-get -qq install libfuse-dev
 rm -rf feeds/packages/lang/golang
 #git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
+#merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
+git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 22.x packages/lang/golang
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
