@@ -31,17 +31,17 @@ mkdir immortalwrt_pkg
 git clone --depth 1 https://github.com/immortalwrt/packages.git immortalwrt_pkg
 
 rm -rf feeds/packages/net/xray-core
-mv immortalwrt_pkg/packages/net/xray-core feeds/packages/net/xray-core
+mv immortalwrt_pkg/net/xray-core feeds/packages/net/xray-core
 rm -rf feeds/packages/net/hysteria
-mv immortalwrt_pk/gpackages/net/hysteria feeds/packages/net/hysteria
+mv immortalwrt_pkg/net/hysteria feeds/packages/net/hysteria
 rm -rf feeds/packages/net/haproxy
-mv immortalwrt_pkg/packages/net/haproxy feeds/packages/net/haproxy
+mv immortalwrt_pkg/net/haproxy feeds/packages/net/haproxy
 rm -rf feeds/packages/net/zerotier
-mv immortalwrt_pkg/packages/net/zerotier feeds/packages/net/zerotier
+mv immortalwrt_pkg/net/zerotier feeds/packages/net/zerotier
 rm -rf feeds/packages/net/smartdns
-mv immortalwrt_pkg/packages/net/smartdns feeds/packages/net/smartdns
+mv immortalwrt_pkg/net/smartdns feeds/packages/net/smartdns
 rm -rf feeds/packages/lang/golang
-mv immortalwrt_pkg/packages/lang/golang feeds/packages/lang/golang
+mv immortalwrt_pkg/lang/golang feeds/packages/lang/golang
 
 rm -rf immortalwrt_pkg
 
