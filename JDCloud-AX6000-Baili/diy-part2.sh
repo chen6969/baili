@@ -30,7 +30,6 @@ merge_package https://github.com/immortalwrt/packages.git packages/net/zerotier
 # New version golang
 rm -rf feeds/packages/lang/golang
 rm -rf packages/lang/golang
-mkdir package/lang
 git clone --depth 1 https://github.com/sbwml/packages_lang_golang -b 22.x packages/lang/golang
 #merge_package https://github.com/immortalwrt/packages.git packages/lang/golang
 
