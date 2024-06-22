@@ -36,6 +36,8 @@ rm -rf feeds/packages/net/hysteria
 mv immortalwrt_pkg/net/hysteria feeds/packages/net/hysteria
 rm -rf feeds/packages/net/haproxy
 mv immortalwrt_pkg/net/haproxy feeds/packages/net/haproxy
+rm -rf feeds/packages/net/sing-box
+mv immortalwrt_pkg/net/haproxy feeds/packages/net/sing-box
 rm -rf feeds/packages/net/zerotier
 mv immortalwrt_pkg/net/zerotier feeds/packages/net/zerotier
 rm -rf feeds/packages/net/smartdns
