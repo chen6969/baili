@@ -139,10 +139,6 @@ jobs:
         
     - name: 选择无线firmware
       run: |
-        cp -r JDCloud-AX6000-Baili/firmware/mt_wifi/mt7986-fw-jdc openwrt/package/mtk/drivers/mt_wifi/files
-        cp -r JDCloud-AX6000-Baili/firmware/warp/mt7986-fw-jdc openwrt/package/mtk/drivers/warp/files
-        cp -r JDCloud-AX6000-Baili/firmware/mt_wifi/mt7986-asus-ax6000 openwrt/package/mtk/drivers/mt_wifi/files
-        cp -r JDCloud-AX6000-Baili/firmware/warp/mt7986-fw-20231228 openwrt/package/mtk/drivers/warp/files
         cd openwrt
         if [ ${{ github.event.inputs.WA_FW }} == 'no-new-fw' ]; then
                 sed -i '/CONFIG_MTK_MT7986_NEW_FW=y/d' .config
@@ -260,18 +256,12 @@ jobs:
         touch release.txt
         echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
         echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
-        if [[ "${{ env.MAC_FIX }}" == '-MAC_fix' ]]; then
-               echo "- 修改源码 使用原厂的MAC地址顺序" >> release.txt
-        else
-               echo "- 未修改源码中的MAC地址顺序" >> release.txt
-        fi
+      
         echo "- mt_wifi firmware: ${{ env.WA_FW }}" >> release.txt
         echo "- &ensp;&ensp;warp firmware: ${{ env.WO_FW }}" >> release.txt
-        if [[ "${{ env.SWITCH }}" == '-gsw' ]]; then
-               echo "- 使用GSW交换机驱动（非DSA）" >> release.txt
-        else
-               echo "- 使用DSA交换机驱动" >> release.txt
-        fi
+
+        echo "- 同时支持DSA和GSW交换机驱动" >> release.txt
+
         if [[ "${{ env.WIFI_INTERFACE }}" == '-mtwifi' ]]; then
                 echo "- 使用hanwckf mtwifi-cfg原生luci无线配置工具" >> release.txt
         else
