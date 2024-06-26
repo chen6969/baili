@@ -43,7 +43,6 @@ on:
         - mt7986-fw-20230421
         - mt7986-fw-20230808
         - mt7986-fw-20231024
-        - mt7986-fw-20231228
       GSW:
         description: 'Use GSW switch driver (non-DSA)'
         required: true
@@ -294,6 +293,7 @@ jobs:
         touch release.txt
         echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
         echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
+        echo "- 登录账号：root 密码：空" >> release.txt
         if [[ "${{ env.MAC_FIX }}" == '-MAC_fix' ]]; then
                echo "- 修改源码 使用原厂的MAC地址顺序" >> release.txt
         else
