@@ -32,18 +32,26 @@ git clone --depth 1 https://github.com/immortalwrt/packages.git immortalwrt_pkg
 
 rm -rf feeds/packages/net/xray-core
 mv immortalwrt_pkg/net/xray-core feeds/packages/net/xray-core
+
 rm -rf feeds/packages/net/hysteria
 mv immortalwrt_pkg/net/hysteria feeds/packages/net/hysteria
+
 rm -rf feeds/packages/net/haproxy
 mv immortalwrt_pkg/net/haproxy feeds/packages/net/haproxy
+
 rm -rf feeds/packages/net/sing-box
 mv immortalwrt_pkg/net/haproxy feeds/packages/net/sing-box
+
 rm -rf feeds/packages/net/zerotier
 mv immortalwrt_pkg/net/zerotier feeds/packages/net/zerotier
+
 rm -rf feeds/packages/net/tailscale
 mv immortalwrt_pkg/net/tailscale feeds/packages/net/tailscale
+sed -i "7s/nftables/iptables/g" feeds/packages/net/tailscale/files/tailscale.conf
+
 rm -rf feeds/packages/net/smartdns
 mv immortalwrt_pkg/net/smartdns feeds/packages/net/smartdns
+
 rm -rf feeds/packages/lang/golang
 mv immortalwrt_pkg/lang/golang feeds/packages/lang/golang
 
