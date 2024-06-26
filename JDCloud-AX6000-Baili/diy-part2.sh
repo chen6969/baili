@@ -40,6 +40,8 @@ rm -rf feeds/packages/net/sing-box
 mv immortalwrt_pkg/net/haproxy feeds/packages/net/sing-box
 rm -rf feeds/packages/net/zerotier
 mv immortalwrt_pkg/net/zerotier feeds/packages/net/zerotier
+rm -rf feeds/packages/net/tailscale
+mv immortalwrt_pkg/net/tailscale feeds/packages/net/tailscale
 rm -rf feeds/packages/net/smartdns
 mv immortalwrt_pkg/net/smartdns feeds/packages/net/smartdns
 rm -rf feeds/packages/lang/golang
