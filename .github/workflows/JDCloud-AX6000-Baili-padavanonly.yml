@@ -136,6 +136,10 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
+        sed -i '$a CONFIG_MTK_BAND_STEERING=y' .config
+        sed -i '$a CONFIG_MTK_MAP_R2_6E_SUPPORT=y' .config
+        sed -i '$a CONFIG_MTK_MAP_R3_6E_SUPPORT=y' .config
+        
         
     - name: 选择无线firmware
       run: |
