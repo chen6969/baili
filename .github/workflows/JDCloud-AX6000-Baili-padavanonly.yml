@@ -260,11 +260,11 @@ jobs:
         touch release.txt
         echo "- 使用源码：${{ env.REPO_URL }}" >> release.txt
         echo "- 登录地址：${{ env.IP_ADDR }}" >> release.txt
+        echo "- 登录账号：root 密码：空" >> release.txt
       
         echo "- mt_wifi firmware: ${{ env.WA_FW }}" >> release.txt
-        echo "- &ensp;&ensp;warp firmware: ${{ env.WO_FW }}" >> release.txt
-
-        echo "- 同时支持DSA和GSW交换机驱动" >> release.txt
+        echo "- warp firmware: ${{ env.WO_FW }}" >> release.txt
+        echo "- 使用GSW交换机驱动（非DSA）" >> release.txt
 
         if [[ "${{ env.WIFI_INTERFACE }}" == '-mtwifi' ]]; then
                 echo "- 使用hanwckf mtwifi-cfg原生luci无线配置工具" >> release.txt
