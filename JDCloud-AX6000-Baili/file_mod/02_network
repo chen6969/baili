@@ -87,11 +87,18 @@ mediatek_setup_macs()
 		lan_mac=$(mmc_get_mac_binary factory 0x2A)
 		label_mac=$lan_mac
 		local wifi0_mac="$(mmc_get_mac_binary factory 0x04)"
-		sed -i '/MacAddress=/d' /etc/wireless/mediatek/mt7986-ax6000.dbdc.b0.dat
-		echo MacAddress=$wifi0_mac >> /etc/wireless/mediatek/mt7986-ax6000.dbdc.b0.dat
 		local wifi1_mac="$(macaddr_setbit_la $wifi0_mac)"
-		sed -i '/MacAddress=/d' /etc/wireless/mediatek/mt7986-ax6000.dbdc.b1.dat
-		echo MacAddress=$wifi1_mac >> /etc/wireless/mediatek/mt7986-ax6000.dbdc.b1.dat
+		local b0dat="$(l1dat if2dat ra0)"
+		local b1dat="$(l1dat if2dat rax0)"
+		if [ -f ${b0dat} ] && ! grep -q "MacAddress=" ${b0dat}; then
+			local b0mac=$wifi0_mac
+			echo "MacAddress=$b0mac" >> ${b0dat}
+		fi
+		if [ -f ${b1dat} ] && ! grep -q "MacAddress=" ${b1dat}; then
+			local b1mac=$wifi1_mac
+			echo "MacAddress=$b1mac" >> ${b1dat}
+		fi
+
 		;;
  	tplink,tl-xdr6086|\
  	tplink,tl-xdr6088)
