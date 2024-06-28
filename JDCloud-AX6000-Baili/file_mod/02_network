@@ -87,7 +87,7 @@ mediatek_setup_macs()
 		lan_mac=$(mmc_get_mac_binary factory 0x2A)
 		label_mac=$lan_mac
 		local wifi0_mac="$(mmc_get_mac_binary factory 0x04)"
-		sed -i '/MacAddress=123/d' /etc/wireless/mediatek/mt7986-ax6000.dbdc.b0.dat
+		sed -i '/MacAddress=/d' /etc/wireless/mediatek/mt7986-ax6000.dbdc.b0.dat
 		echo MacAddress=$wifi0_mac >> /etc/wireless/mediatek/mt7986-ax6000.dbdc.b0.dat
 		local wifi1_mac="$(macaddr_setbit_la $wifi0_mac)"
 		sed -i '/MacAddress=/d' /etc/wireless/mediatek/mt7986-ax6000.dbdc.b1.dat
