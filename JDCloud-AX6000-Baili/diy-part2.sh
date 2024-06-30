@@ -52,6 +52,9 @@ sed -i "7s/nftables/iptables/g" feeds/packages/net/tailscale/files/tailscale.con
 rm -rf feeds/packages/net/smartdns
 mv immortalwrt_pkg/net/smartdns feeds/packages/net/smartdns
 
+rm -rf feeds/packages/net/msd_lite
+mv immortalwrt_pkg/net/msd_lite feeds/packages/net/msd_lite
+
 rm -rf feeds/packages/lang/golang
 mv immortalwrt_pkg/lang/golang feeds/packages/lang/golang
 
