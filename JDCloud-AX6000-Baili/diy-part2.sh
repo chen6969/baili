@@ -92,6 +92,9 @@ merge_package https://github.com/Lienol/openwrt-package.git openwrt-package/luci
 rm -rf feeds/luci/applications/luci-app-openclash
 merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclash
 
+# FROS是一款路由器防沉迷系统，支持常见的游戏、视频等APP过滤，如抖音、斗鱼、王者荣耀、和平精英等，并支持 APP使用时长统计，小孩网课必备神器。
+git clone -b fros-21.02 --depth 1 https://github.com/destan19/fros-packages-immortalwrt-mt798x.git package/custom/fros-packages
+
 # 预置openclash内核
 mkdir -p files/etc/openclash/core
 CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
