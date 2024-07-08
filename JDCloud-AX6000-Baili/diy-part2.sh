@@ -94,7 +94,7 @@ merge_package https://github.com/vernesong/OpenClash OpenClash/luci-app-openclas
 
 # FROS是一款路由器防沉迷系统，支持常见的游戏、视频等APP过滤，如抖音、斗鱼、王者荣耀、和平精英等，并支持 APP使用时长统计，小孩网课必备神器。
 git clone -b fros-21.02 --depth 1 https://github.com/destan19/fros-packages-immortalwrt-mt798x.git package/custom/fros-packages
-sed -i "s/$(CONFIG_TARGET_SUBTARGET)/mt7981/g"  package/custom/fros-packages/fros-apps/Makefile
+sed -i "s/\$(CONFIG_TARGET_SUBTARGET)/mt7981/g"  package/custom/fros-packages/fros-apps/Makefile
 
 # 预置openclash内核
 mkdir -p files/etc/openclash/core
