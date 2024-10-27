@@ -25,22 +25,20 @@ git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
 
-
 # use official openclash source
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
 
-
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
-rm -rf target/linux/generic/hack-6.6/600-net-enable-fraglist-GRO-by-default.patch
-rm -rf target/linux/generic/pending-6.6/680-net-add-TCP-fraglist-GRO-support.patch
-rm -rf target/linux/generic/pending-6.6/681-net-remove-NETIF_F_GSO_FRAGLIST-from-NETIF_F_GSO_SOF.patch
-rm -rf target/linux/generic/pending-6.6/684-gso-fix-gso-fraglist-segmentation-after-pull-from-fr.patch
-rm -rf target/linux/generic/pending-6.6/685-net-gso-fix-tcp-fraglist-segmentation-after-pull-fro.patch
-rm -rf target/linux/generic/backport-6.6/611-01-v6.11-udp-Allow-GSO-transmit-from-devices-with-no-checksum.patch
-rm -rf target/linux/generic/backport-6.6/611-02-v6.11-net-Make-USO-depend-on-CSUM-offload.patch
-rm -rf target/linux/generic/backport-6.6/611-03-v6.11-udp-Fall-back-to-software-USO-if-IPv6-extension-head.patch
+#rm -rf target/linux/generic/hack-6.6/600-net-enable-fraglist-GRO-by-default.patch
+#rm -rf target/linux/generic/pending-6.6/680-net-add-TCP-fraglist-GRO-support.patch
+#rm -rf target/linux/generic/pending-6.6/681-net-remove-NETIF_F_GSO_FRAGLIST-from-NETIF_F_GSO_SOF.patch
+#rm -rf target/linux/generic/pending-6.6/684-gso-fix-gso-fraglist-segmentation-after-pull-from-fr.patch
+#rm -rf target/linux/generic/pending-6.6/685-net-gso-fix-tcp-fraglist-segmentation-after-pull-fro.patch
+#rm -rf target/linux/generic/backport-6.6/611-01-v6.11-udp-Allow-GSO-transmit-from-devices-with-no-checksum.patch
+#rm -rf target/linux/generic/backport-6.6/611-02-v6.11-net-Make-USO-depend-on-CSUM-offload.patch
+#rm -rf target/linux/generic/backport-6.6/611-03-v6.11-udp-Fall-back-to-software-USO-if-IPv6-extension-head.patch
 
 # 预置openclash内核
 mkdir -p files/etc/openclash/core
