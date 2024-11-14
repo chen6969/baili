@@ -29,7 +29,7 @@ git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/cu
 rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
 
-# fix linux kernel 6.6.x udp issue
+# fix linux kernel 6.6.x udp issue ,only work for 24.x and master
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
 rm -rf target/linux/generic/hack-6.6/600-net-enable-fraglist-GRO-by-default.patch
 rm -rf target/linux/generic/pending-6.6/680-net-add-TCP-fraglist-GRO-support.patch
