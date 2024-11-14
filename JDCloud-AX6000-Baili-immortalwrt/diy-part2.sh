@@ -11,8 +11,20 @@
 #
 
 
+# alist
+rm -rf feeds/packages/net/alist
+rm -rf feeds/luci/applications/luci-app-alist
+git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 # fix alist build fail issue -> https://github.com/sbwml/luci-app-alist
 sudo -E apt-get -qq install libfuse-dev
+
+#wechatpush
+rm -rf feeds/luci/applications/luci-app-wechatpush
+git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
+
+# use official openclash source
+rm -rf feeds/luci/applications/luci-app-openclash
+git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
 
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
