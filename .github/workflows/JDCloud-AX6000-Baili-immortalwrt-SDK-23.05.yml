@@ -37,7 +37,7 @@ env:
   REPO_BRANCH: openwrt-23.05
   CONFIG_FILE: JDCloud-AX6000-Baili-immortalwrt/mt7986-sdk-23.05.config
   DIY_P1_SH: JDCloud-AX6000-Baili-immortalwrt/diy-part1.sh
-  DIY_P2_SH: JDCloud-AX6000-Baili-immortalwrt/diy-part2.sh
+  DIY_P2_SH: JDCloud-AX6000-Baili-immortalwrt/diy-part2-23.05.x.sh
   SSH_ACTIONS: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
