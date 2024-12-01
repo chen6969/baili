@@ -22,11 +22,13 @@ sudo -E apt-get -qq install libfuse-dev
 rm -rf feeds/luci/applications/luci-app-wechatpush
 git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
 
+git clone --depth 1 https://github.com/morytyann/OpenWrt-mihomo.git package/custom/OpenWrt-mihomo
 
 # use official openclash source
 rm -rf feeds/luci/applications/luci-app-openclash
-#git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
-git clone --depth 1 https://github.com/morytyann/OpenWrt-mihomo.git package/custom/OpenWrt-mihomo
+git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
+
+
 
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
@@ -40,15 +42,15 @@ rm -rf target/linux/generic/backport-6.6/611-02-v6.11-net-Make-USO-depend-on-CSU
 rm -rf target/linux/generic/backport-6.6/611-03-v6.11-udp-Fall-back-to-software-USO-if-IPv6-extension-head.patch
 
 # 预置openclash内核
-#mkdir -p files/etc/openclash/core
-#CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
-#GEOIP_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
-#GEOSITE_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
-#wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
-#wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
-#wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
-# 给内核权限
-# chmod +x files/etc/openclash/core/clash*
+mkdir -p files/etc/openclash/core
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+GEOIP_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat"
+GEOSITE_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
+wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
+ 给内核权限
+chmod +x files/etc/openclash/core/clash*
 
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
