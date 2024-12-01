@@ -20,12 +20,13 @@ sudo -E apt-get -qq install libfuse-dev
 
 #wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
-# git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
-git clone --depth 1 https://github.com/morytyann/OpenWrt-mihomo.git package/custom/OpenWrt-mihomo
+git clone --depth 1 https://github.com/tty228/luci-app-wechatpush.git package/custom/luci-app-wechatpush
+
 
 # use official openclash source
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
+#git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
+git clone --depth 1 https://github.com/morytyann/OpenWrt-mihomo.git package/custom/OpenWrt-mihomo
 
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
