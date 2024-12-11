@@ -10,12 +10,17 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+# golang only for 21.xx and 23.xx
+rm -rf feeds/packages/lang/golang
+git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+
 # alist
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
 git clone --depth 1 https://github.com/sbwml/openwrt-alist.git package/custom/luci-app-alist
 # fix alist build fail issue -> https://github.com/sbwml/luci-app-alist
 sudo -E apt-get -qq install libfuse-dev
+
 
 #wechatpush
 rm -rf feeds/luci/applications/luci-app-wechatpush
