@@ -10,11 +10,6 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
-
-
-
-
-
 # alist
 rm -rf feeds/packages/net/alist
 rm -rf feeds/luci/applications/luci-app-alist
@@ -33,12 +28,14 @@ rm -rf feeds/luci/applications/luci-app-openclash
 git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
 
 
+# extend openwrt package -->
 mkdir immortalwrt_luci
 git clone --depth 1 https://github.com/immortalwrt/luci.git immortalwrt_luci
 
 mv immortalwrt_luci/applications/luci-app-zerotier package/custom/luci-app-zerotier
 
 rm -rf immortalwrt_luci
+# <-- extend openwrt package 
 
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
