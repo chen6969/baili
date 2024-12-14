@@ -26,7 +26,7 @@ git clone --depth 1 https://github.com/morytyann/OpenWrt-mihomo.git package/cust
 
 # use official openclash source
 rm -rf feeds/luci/applications/luci-app-openclash
-git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
+git clone --branch dev --depth 1 https://github.com/vernesong/OpenClash.git package/custom/luci-app-openclash
 
 
 
