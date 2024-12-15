@@ -61,7 +61,7 @@ GEOSITE_URL="https://github.com/MetaCubeX/meta-rules-dat/releases/download/lates
 wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
 wget -qO- $GEOIP_URL > files/etc/openclash/GeoIP.dat
 wget -qO- $GEOSITE_URL > files/etc/openclash/GeoSite.dat
- 给内核权限
+# 给内核权限
 chmod +x files/etc/openclash/core/clash*
 
 # Modify default IP
