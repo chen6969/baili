@@ -34,7 +34,7 @@ sudo -E apt-get -qq install libfuse-dev
 
 
 # remove openwrt/package  and use immortalwrt/package
-rm -rf feeds/packages/net/zerotier
+# rm -rf feeds/packages/net/zerotier
 
 # fix linux kernel 6.6.x udp issue
 # compare files with https://github.com/coolsnowwolf/lede/tree/master/target/linux/generic then del all different files
