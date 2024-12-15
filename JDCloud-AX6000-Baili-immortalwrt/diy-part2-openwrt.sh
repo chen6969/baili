@@ -11,8 +11,8 @@
 #
 
 # golang only for 21.xx and 23.xx
-rm -rf feeds/packages/lang/golang
-git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
+#rm -rf feeds/packages/lang/golang
+#git clone --depth 1 https://github.com/sbwml/packages_lang_golang feeds/packages/lang/golang
 
 # alist
 rm -rf feeds/packages/net/alist
@@ -34,12 +34,12 @@ git clone --depth 1 https://github.com/vernesong/OpenClash.git package/custom/lu
 
 
 # extend openwrt package -->
-mkdir immortalwrt_luci
-git clone --depth 1 https://github.com/immortalwrt/luci.git immortalwrt_luci
+#mkdir immortalwrt_luci
+#git clone --depth 1 https://github.com/immortalwrt/luci.git immortalwrt_luci
 
-mv immortalwrt_luci/applications/luci-app-zerotier package/custom/luci-app-zerotier
+#mv immortalwrt_luci/applications/luci-app-zerotier package/custom/luci-app-zerotier
 
-rm -rf immortalwrt_luci
+#rm -rf immortalwrt_luci
 # <-- extend openwrt package 
 
 # fix linux kernel 6.6.x udp issue
