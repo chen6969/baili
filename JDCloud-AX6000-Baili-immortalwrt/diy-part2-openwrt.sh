@@ -71,3 +71,6 @@ chmod +x files/etc/openclash/core/clash*
 #rm -rf /tmp/clash.tar.gz >/dev/null 2>&1
 ##-----------------Delete DDNS's examples-----------------
 sed -i '/myddns_ipv4/,$d' feeds/packages/net/ddns-scripts/files/etc/config/ddns
+
+# enable wifi
+sed -i 's/set ${s}.disabled='${defaults ? 0 : 1}'/set ${s}.disabled=0/g' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
