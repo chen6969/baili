@@ -80,4 +80,4 @@ sed -i "s/set \${si}\.ssid='\${defaults?.ssid || \"OpenWrt\"}'/set \${si}.ssid='
 
 # fix 802.11r +PSK-SAE ,apple device can't connect issue
 # ref https://github.com/openwrt/openwrt/issues/7858
-sed -i 's/\[ "${ieee80211w:-0}" -gt 0 \] \&\& append wpa_key_mgmt "WPA-PSK-SHA256"/\[ "${ieee80211w:-0}" -gt 1 \] \&\& append wpa_key_mgmt "WPA-PSK-SHA256"/g' package/network/config/wifi-scripts/files/lib/netifd/hostapd.sh
+#??? sed -i 's/\[ "${ieee80211w:-0}" -gt 0 \] \&\& append wpa_key_mgmt "WPA-PSK-SHA256"/\[ "${ieee80211w:-0}" -gt 1 \] \&\& append wpa_key_mgmt "WPA-PSK-SHA256"/g' package/network/config/wifi-scripts/files/lib/netifd/hostapd.sh
