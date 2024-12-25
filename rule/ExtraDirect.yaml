@@ -20,28 +20,14 @@ payload:
   # - +.miwifi.com
   # - +.routerlogin.com
 # Other domains, VPS
-    - kernel.zyns.com
-    - kernel.changeip.org
-    - kernel2022.freetcp.com
-    - server2022.lflink.com
-    - server2020.dynssl.com
-    - backup2020.freeddns.com
-
-  #   - +.flying2020.tk
-  #   - +.kernel2022.ga  
-  
     - n1router.ddnsfree.com
     - router.houzi-blog.top
-  
-  # Check all block sub domain of jsdelivr
-    - +.jsdelivr.net
   
   #   - data.flurry.com
      # fix google play cant download issue
   #   - +.xn--ngstr-lra8j.com
   
     - +.intel.cn
-  
     - +.edu.cn
     - +.10086.cn  # for IPV6 check  , nslookup 10086.cn , nslookup -port=6053 10086.cn
   
