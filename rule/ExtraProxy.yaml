@@ -85,36 +85,23 @@ payload:
   - '+.nflxvideo.net'
   - '+.nflxvideo.net' 
   
-  # 机场订阅
+  # 订阅
     - subscribe.kelecloud.org 
     - subsubsubsubsub.keledydz.uk
     - +.klklklkl.uk
     - +.kelecloud.xyz
   
-  # qnap  
-    # - +.download.qnap.com
-    # - +.qnapclub.eu
-
     - api.dynu.com
     - more.musl.cc
-
-    # - +.freenom.com
   
   # MSFT copilot
     - copilot.microsoft.com
     - sydney.bing.com
     - edgeservices.bing.com
-
   
   # Firstup ,Circult +
   #   - +.socialchorus.com
-  
-  # w/o gfw list, need these-->
-  #   - +.v2ex.com
-  #   - +.hostloc.com
-  # w/o gfw list <---
-  
-  
+
   # 图床
     - +.redircdn.com
     - +.99img.cc
@@ -134,8 +121,6 @@ payload:
     - playmods.net
   
   #   - connect.rom.miui.com
-    - +.jsdelivr.com
-    - +.jsdelivr.net
   
     - revanced.net
     
