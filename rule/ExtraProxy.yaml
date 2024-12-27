@@ -33,19 +33,24 @@ payload:
     - +.cnbeta.com.tw
 
  # https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/openai.yaml
-    - chat.openai.com.cdn.cloudflare.net
     - openaiapi-site.azureedge.net
     - openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
     - openaicomproductionae4b.blob.core.windows.net
     - production-openaicom-storage.azureedge.net
     - +.ai.com
     - +.chatgpt.com
+    - +.chat.com
     - +.oaistatic.com
     - +.oaiusercontent.com
     - +.openai.com
+    - +.sora.com
+    - +.chatgpt.livekit.cloud
+    - +.host.livekit.cloud
+    - +.turn.livekit.cloud
     - +.openai.com.cdn.cloudflare.net
     - o33249.ingest.sentry.io
     - openaicom.imgix.net
+    - browser-intake-datadoghq.com
 
  # https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite/perplexity.yaml
     - +.perplexity.ai
@@ -57,7 +62,7 @@ payload:
   #   - api.onedrive.com
   
   
-#  please check https://github.com/dler-io/Rules/blob/main/Clash/Provider/OpenAI.yaml
+#  https://github.com/dler-io/Rules/blob/main/Clash/Provider/OpenAI.yaml
   # > Claude
     - +.anthropic.com
     - +.claude.ai
@@ -101,7 +106,6 @@ payload:
   
   # Firstup ,Circult +
   #   - +.socialchorus.com
-
   # 图床
     - +.redircdn.com
     - +.99img.cc
@@ -111,17 +115,14 @@ payload:
     - +.postimages.org
     - i.loli.net
   
-    - sing-box.sagernet.org
   # RSS
     - plink.anyfeeder.com
-  
     - v2.hysteria.network
-    - idev.dev
+    - sing-box.sagernet.org
     - +.metacubex.one
+    - idev.dev
     - playmods.net
   
   #   - connect.rom.miui.com
-  
     - revanced.net
-    
-    - '+.openwrt.org'
+    - +.openwrt.org
